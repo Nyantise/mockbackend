@@ -1,0 +1,20 @@
+@baseURL = http://localhost:3000
+@route = /auth
+@url = {{baseURL}}{{route}}
+
+# @name base
+GET {{url}}
+
+###
+
+# @name param
+GET {{url}}/32932
+
+### 
+# @name in
+POST {{url}}/in
+Content-Type: application/json
+
+{
+    "token": {{param.response.body.token}}
+}
